@@ -1,5 +1,6 @@
 import React from "react"
 import logo from '../imagenes/logo.luxora.png'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Navbar = () => {
 return(
@@ -13,6 +14,9 @@ return(
             <a style={styles.anchors} href="">Manicure</a>
             <a style={styles.anchors} href="">Cejas HD</a>
             <a style={styles.anchors} href="">Lashlifting</a>
+            
+        {/*CartWidget*/}
+            <ShoppingCartIcon color="action" fontSize="large"/>
         </nav>
     </div>
 )
@@ -30,7 +34,8 @@ const styles ={
         height:200,
     },
     titulo:{
-    color:'#ffde8a'
+    color:'#ffde8a',
+    textAlign: 'center',
     },
     navStyle:{
         display:'flex',
@@ -39,7 +44,6 @@ const styles ={
     anchors:{
         margin:10
     }
-
 }
-
 export default Navbar
+
