@@ -1,6 +1,5 @@
 import React from "react"
 import logo from '../imagenes/logo.luxora.png'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Navbar = () => {
 return(
@@ -14,9 +13,6 @@ return(
             <a style={styles.anchors} href="">Manicure</a>
             <a style={styles.anchors} href="">Cejas HD</a>
             <a style={styles.anchors} href="">Lashlifting</a>
-            
-        {/*CartWidget*/}
-            <ShoppingCartIcon color="action" fontSize="large"/>
         </nav>
     </div>
 )
