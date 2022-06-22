@@ -1,5 +1,6 @@
 import React from "react"
 import logo from '../imagenes/logo.luxora.png'
+import Cartwidget from "./CartWidget"
 
 const Navbar = () => {
 return(
@@ -13,6 +14,7 @@ return(
             <a style={styles.anchors} href="">Manicure</a>
             <a style={styles.anchors} href="">Cejas HD</a>
             <a style={styles.anchors} href="">Lashlifting</a>
+            <Cartwidget />
         </nav>
     </div>
 )
