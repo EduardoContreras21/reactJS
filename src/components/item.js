@@ -1,4 +1,4 @@
-const item =[
+const servicios =[
     {name:"Uñas", precio:350, disponibilidad:3},
     {name:"Gelish", precio:150, disponibilidad:6},
     {name:"Pedicure", precio:380, disponibilidad:3},

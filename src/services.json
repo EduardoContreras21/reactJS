@@ -1,0 +1,31 @@
+[{
+    "name": "Uñas",
+    "id": "uñas",
+    "price": 350,
+    "descripcion": "Aplicación de uñas tipo escultural, usando acrílico como material de construcción. Incluye aplicación en gel semipermanente"
+  }, {
+    "name": "Gelish",
+    "id": "gelish",
+    "price": 150,
+    "descripcion": "El gelish es un esmalte semipermanente para las uñas que garantiza larga durabilidad, de hasta 21 días"
+  }, {
+    "name": "Pedicure",
+    "id": "pedicure",
+    "price": 390,
+    "descripcion": "Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en pies"
+  },{
+    "name": "Manicure",
+    "id": "manicure",
+    "price": 300,
+    "descripcion": "Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en manos"
+  }, {
+    "name": "Cejas HD",
+    "id": "cejas HD",
+    "price": 300,
+    "descripcion": "La finalidad, es crear una apariencia realista de tus cejas mas plenas y rizadas"
+  }, {
+    "name": "Lashlifting",
+    "id": "lashlifting",
+    "price": 360,
+    "descripcion": "Tratamiento que alarga y crea una ligera curva hacia arriba de manera natural y duradera, consiguiendo mayor longitud y espesor"
+    }]
