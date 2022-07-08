@@ -3,24 +3,32 @@ import ItemCount from './ItemCount'
 import items from './ItemList'
 import ItemList from './ItemList'
 
-
-    /* PROMESA */
-const promesa = new Promise((res,rej)=>{
-    setTimeout(()=>{
-        res(items);
-    },2000);
-});
-/*Item List Container*/ 
-const ItemListContainer = () => {
+const promesa = new Promise((res, rej) => {
+    setTimeout(() => {
+      res(items);
+    }, 2000);
+  });
+  
+function ItemListContainer() {
     const [servicios, setServicios] = useState([]);
-    /* USE EFFECT */
-    useEffect(()=>{
-        promesa.then((data)=>{
-            console.log(data);
-            setServicios(data);
-        }).catch ((data)=>{
-        console.log(data);
-    })},[]);
+    const [loading, setLoading] = useState(false);
+  
+    useEffect(() => {
+      setLoading(true);
+      promesa.then((response) => {
+        setLoading(false);
+        setServicios(response);
+      });
+    }, []);
+
+    if (loading) {
+      return (
+        <>
+          <h1>Cargando...</h1>
+        </>
+      );
+    };
+  
     /*OnADD*/ 
     const onAdd =() =>{
         alert('Gracias por tu elección')}
@@ -28,10 +36,12 @@ const ItemListContainer = () => {
         <>
         <h2 style={styles.titulos}>LISTA DE SERVICIOS DE LUXORA</h2>
         <ItemCount initial={0} stock={3} onAdd={onAdd}/>
-        <ItemList />
+        <div>
+            <ItemList services={servicios}/>
+        </div>
         </>
-        )
-}
+  );
+    }    
 
 const styles ={
     titulos:{

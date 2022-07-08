@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Item({serv}) {
+function Item(serv) {
   return (
     <div className="card text-center">
         <img src={serv.imagen} alt=''></img>
