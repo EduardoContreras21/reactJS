@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import item from './item';
+import Item from './Item'
 import nails from '../imagenes/acrilicas.tag.jpg'
 import gel from '../imagenes/gelish.tag.jpg'
 import pedi from '../imagenes/pedicure.tag.jpg'
@@ -53,7 +53,7 @@ const promesa = new Promise((res,rej)=>{
     },2000);
 });
 const ItemList = () => {
-    const [items, setServicios] = useState([]);
+    const [servicios, setServicios] = useState([]);
     /* USE EFFECT */
     useEffect(()=>{
         promesa.then((data)=>{
@@ -62,15 +62,13 @@ const ItemList = () => {
         }).catch ((data)=>{
         console.log(data);
     })},[]);
-}
-function Items() {
     return(
     <div className='container d-flex justify-content-center align-items-center h-100'>
         <div className='row'>
             {
                 items.map(item =>(
             <div className='col-md-4' key={item.id}>
-                <item title={item.title} imagen={item.imagen} descripcion={item.descripcion}/>
+                <Item title={item.title} imagen={item.imagen} descripcion={item.descripcion}/>
             </div>
 ))}
         </div> 
