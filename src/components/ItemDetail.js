@@ -1,27 +1,18 @@
-import {useEffect, useState} from 'react'
-import services from '../services.json'
+import React from 'react'
+import nails from '../imagenes/acrilicas.tag.jpg'
 
-/* PROMESA */
-const prom = new Promise((res,rej)=>{
-    setTimeout(()=>{
-        res(services);
-    },2000);
-});
-const ItemDetail = () => {
-    const [services, setServices] = useState({});
-    /* USE EFFECT */
-    useEffect(()=>{
-        prom.then((data)=>{
-            console.log(data);
-            setServices(data);
-        }).catch ((data)=>{
-        console.log(data);
-    })},[]);
-    return(
-    <>
-    {services.map((services)=><h2 key={services.id}>{services.name}{services.price}{services.descripcion}</h2>)}
-    </>
-    )
+
+function ItemDetail() {
+  return (
+    <div className="card container d-flex justify-content-center align-items-center h-100">
+        <img src={nails} alt=''></img>
+        <div className='card-body col-md-4'>
+            <h4 className='card-title text-center'>Uñas</h4>
+            <p className='card-text text-left'>Aplicación de uñas tipo escultural, usando acrílico como material de construcción. Incluye aplicación en gel semipermanente</p>
+            <a href='#!' className='btn btn-primary'>Agendar</a>
+        </div>
+    </div>
+  )
 }
 
 export default ItemDetail
