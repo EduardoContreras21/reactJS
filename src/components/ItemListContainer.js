@@ -1,8 +1,26 @@
+import {useEffect, useState} from 'react'
 import ItemCount from './ItemCount'
+import items from './ItemList'
 import ItemList from './ItemList'
 
+
+    /* PROMESA */
+const promesa = new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res(items);
+    },2000);
+});
 /*Item List Container*/ 
 const ItemListContainer = () => {
+    const [servicios, setServicios] = useState([]);
+    /* USE EFFECT */
+    useEffect(()=>{
+        promesa.then((data)=>{
+            console.log(data);
+            setServicios(data);
+        }).catch ((data)=>{
+        console.log(data);
+    })},[]);
     /*OnADD*/ 
     const onAdd =() =>{
         alert('Gracias por tu elección')}

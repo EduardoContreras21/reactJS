@@ -1,12 +1,12 @@
 import React from 'react'
 
-function Item({title,imagen,descripcion}) {
+function Item({serv}) {
   return (
     <div className="card text-center">
-        <img src={imagen} alt=''></img>
+        <img src={serv.imagen} alt=''></img>
         <div className='card-body'>
-            <h4 className='card-title'>{title}</h4>
-            <p className='card-text'>{descripcion}</p>
+            <h4 className='card-title'>{serv.title}</h4>
+            <p className='card-text'>{serv.descripcion}</p>
             <a href='#!' className='btn btn-primary'>Adquirir</a>
         </div>
     </div>

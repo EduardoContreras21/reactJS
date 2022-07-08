@@ -1,4 +1,3 @@
-import {useEffect, useState} from 'react'
 import Item from './Item'
 import nails from '../imagenes/acrilicas.tag.jpg'
 import gel from '../imagenes/gelish.tag.jpg'
@@ -46,22 +45,7 @@ const items =[
     },
 ]
 
-/* PROMESA */
-const promesa = new Promise((res,rej)=>{
-    setTimeout(()=>{
-        res(items);
-    },2000);
-});
 const ItemList = () => {
-    const [servicios, setServicios] = useState([]);
-    /* USE EFFECT */
-    useEffect(()=>{
-        promesa.then((data)=>{
-            console.log(data);
-            setServicios(data);
-        }).catch ((data)=>{
-        console.log(data);
-    })},[]);
     return(
     <div className='container d-flex justify-content-center align-items-center h-100'>
         <div className='row'>
@@ -71,10 +55,8 @@ const ItemList = () => {
                 <Item title={item.title} imagen={item.imagen} descripcion={item.descripcion}/>
             </div>
 ))}
-        </div> 
-    
+        </div>
     </div>
-    )
-}
+    )}
 
 export default ItemList
