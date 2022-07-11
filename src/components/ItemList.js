@@ -1,4 +1,4 @@
-import Item from './Item'
+import Item from './item'
 import nails from '../imagenes/acrilicas.tag.jpg'
 import gel from '../imagenes/gelish.tag.jpg'
 import pedi from '../imagenes/pedicure.tag.jpg'
