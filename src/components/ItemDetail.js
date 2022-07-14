@@ -1,6 +1,6 @@
 import React from 'react'
 import nails from '../imagenes/acrilicas.tag.jpg'
-
+import ItemCount from './ItemCount'
 
 function ItemDetail() {
   return (
@@ -14,5 +14,12 @@ function ItemDetail() {
     </div>
   )
 }
-
+const onAdd =() =>{
+  alert('Gracias por tu elección')
+return(
+  <>
+  <ItemCount initial={0} stock={3} onAdd={onAdd}/>
+  </>
+);
+}
 export default ItemDetail
