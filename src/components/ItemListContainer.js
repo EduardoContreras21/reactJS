@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import ItemCount from './ItemCount'
 import items from './ItemList'
 import ItemList from './ItemList'
+import { useParams } from 'react-router-dom'
 
 const promesa = new Promise((res, rej) => {
     setTimeout(() => {
@@ -10,16 +11,20 @@ const promesa = new Promise((res, rej) => {
   });
   
 function ItemListContainer() {
+    const {categoryName} = useParams()
     const [servicios, setServicios] = useState([]);
     const [loading, setLoading] = useState(false);
-  
+
+    const URL = categoryName
+    ? `http://localhost:3000/category/${categoryName}`
+    : 'http://localhost:3000/'
     useEffect(() => {
       setLoading(true);
       promesa.then((response) => {
         setLoading(false);
         setServicios(response);
       });
-    }, []);
+    }, [categoryName]);
 
     if (loading) {
       return (

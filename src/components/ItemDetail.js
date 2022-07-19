@@ -1,15 +1,18 @@
 import React from 'react'
-import nails from '../imagenes/acrilicas.tag.jpg'
+import items from './ItemList'
 import ItemCount from './ItemCount'
+import {useNavigate} from 'react-router-dom'
+import ItemList from './ItemList'
 
 function ItemDetail() {
+  const navigate = useNavigate ()
   return (
     <div className="card container d-flex justify-content-center align-items-center h-100">
-        <img src={nails} alt=''></img>
+        <img src={items.imagen} alt=''></img>
         <div className='card-body col-md-4'>
-            <h4 className='card-title text-center'>Uñas</h4>
-            <p className='card-text text-left'>Aplicación de uñas tipo escultural, usando acrílico como material de construcción. Incluye aplicación en gel semipermanente</p>
-            <a href='#!' className='btn btn-primary'>Agendar</a>
+            <h4 className='card-title text-center'>{items.title}</h4>
+            <p className='card-text text-left'>{items.descripcion}</p>
+            <button onClick={()=> navigate(`itemId`)} className='btn btn-primary'>Adquirir</button>
         </div>
     </div>
   )
@@ -19,7 +22,8 @@ const onAdd =() =>{
 return(
   <>
   <ItemCount initial={0} stock={3} onAdd={onAdd}/>
+  <item items={items.id} />
   </>
-);
+)
 }
 export default ItemDetail

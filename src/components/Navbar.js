@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom"
 
 const Navbar = () => {
     const categories = [
-        {name:"Uñas", id:"uñas", route:"/category/uñas"},
+        {name:"Uñas", id:"uñas", route:"/category/nails"},
         {name:"Gelish", id:"gelish", route:"/category/gelish"},
         {name:"Pedicure", id:"pedicure", route:"/category/pedicure"},
         {name:"Manicure", id:"manicure", route:"/category/manicure"},
@@ -45,7 +45,7 @@ const styles ={
         display:'flex',
         justifyContent: 'space-between',
     },
-    anchors:{
+    link:{
         margin:10
     }
 }

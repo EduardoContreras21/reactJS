@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail'
+import { useParams } from 'react-router-dom';
 import items from './ItemList'
-
 
 const promesa = new Promise((res, rej) => {
     setTimeout(() => {
@@ -10,16 +10,18 @@ const promesa = new Promise((res, rej) => {
   });
   
 function ItemDetailContainer() {
+    const parametros = useParams
     const [servicios, setServicios] = useState([]);
     const [loading, setLoading] = useState(false);
-  
+
+    
     useEffect(() => {
       setLoading(true);
       promesa.then((response) => {
         setLoading(false);
         setServicios(response);
       });
-    }, []);
+    }, [parametros]);
 
     if (loading) {
       return (
