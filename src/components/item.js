@@ -1,23 +1,22 @@
 import { Category } from '@mui/icons-material'
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import items from './ItemList'
-
-
-
+import { useNavigate, useParams } from 'react-router-dom'
+import {items} from './ItemList'
 
 function Item(serv) {
   const navigate = useNavigate()
+  const {categoryName} = useParams ();
+const item = serv.id ? serv : items.find(item => item.categoryName === categoryName);
+
   return (
-    <div className="card text-center">
-        <img src={serv.imagen} alt=''></img>
+    <div className="card text-center" style={{maxWidth: 500, margin:"0 auto"}} >
+        <img src={item.imagen} alt=''></img>
         <div className='card-body'>
-            <h4 className='card-title'>{serv.title}</h4>
-            <p className='card-text'>{serv.id}</p>
-            <button onClick={()=> navigate(`/category/${items.categoryName}`)} className='btn btn-primary'>Adquirir</button>
+            <h4 className='card-title'>{item.title}</h4>
+            <p className='card-text'>{item.id}</p>
+            <button onClick={()=> navigate(`/servicio/${item.id}`)} className='btn btn-primary'>Ver detalle</button>
         </div>
     </div>
   )
-}
+  }
 
-export default Item
+export default Item 

@@ -2,6 +2,7 @@ import React from "react"
 import logo from '../imagenes/logo.luxora.png'
 import Cartwidget from "./CartWidget"
 import { Link, NavLink } from "react-router-dom"
+import ItemDetail from "./ItemDetail"
 
 const Navbar = () => {
     const categories = [
@@ -20,6 +21,7 @@ return(
         <nav>
             {categories.map((category) => <NavLink key={category.id} style={styles.link} to={category.route}>{category.name}</NavLink>)}
             <Link to ="Cart"><Cartwidget /></Link>
+            
         </nav>
         </div>
     </div>

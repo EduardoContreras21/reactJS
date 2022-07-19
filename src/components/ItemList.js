@@ -7,7 +7,7 @@ import hd from '../imagenes/cejashd.tag.jpg'
 import lash from '../imagenes/lashlifting.tag.jpg'
 import { Category } from '@mui/icons-material'
 
-const items =[
+export const items =[
     {
         id:'0',
         title:'Uñas',
@@ -20,35 +20,35 @@ const items =[
         title:'Gelish',
         imagen: gel,
         descripcion:'El gelish es un esmalte semipermanente para las uñas que garantiza larga durabilidad, de hasta 21 días',
-        category: 'gelish',
+        categoryName: 'gelish',
     },
     {
         id:'2',
         title:'Pedicure',
         imagen: pedi,
         descripcion:'Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en pies',
-        category: 'pedicure',
+        categoryName: 'pedicure',
     },
     {
         id:'3',
         title:'Manicure',
         imagen: mani,
         descripcion:'Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en manos',
-        category: 'manicure',
+        categoryName: 'manicure',
     },
     {
         id:'4',
         title:'Cejas HD',
         imagen: hd,
         descripcion:'La finalidad, es crear una apariencia realista de tus cejas mas plenas y rizadas',
-        category: 'cejasHD',
+        categoryName: 'cejasHD',
     },
     {
         id:'5',
         title:'Lashlifting',
         imagen: lash,
         descripcion:'Tratamiento que alarga y crea una ligera curva hacia arriba de manera natural y duradera, consiguiendo mayor longitud y espesor',
-        category: 'lashlifting',
+        categoryName: 'lashlifting',
     },
 ]
 
@@ -59,7 +59,7 @@ const ItemList = () => {
             {
                 items.map(item =>(
             <div className='col-md-4' key={item.id}>
-                <Item title={item.title} imagen={item.imagen} descripcion={item.descripcion}/>
+                <Item {...item}/>
             </div>
 ))}
         </div>

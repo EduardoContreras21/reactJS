@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom';
-import items from './ItemList'
+import {items} from './ItemList'
 
 const promesa = new Promise((res, rej) => {
     setTimeout(() => {
@@ -10,8 +10,8 @@ const promesa = new Promise((res, rej) => {
   });
   
 function ItemDetailContainer() {
-    const {itemId} = useParams
-    const [servicios, setServicios] = useState([]);
+    const {itemId} = useParams ();
+    const [servicio, setServicio] = useState([]);
     const [loading, setLoading] = useState(false);
 
     
@@ -19,9 +19,9 @@ function ItemDetailContainer() {
       setLoading(true);
       promesa.then((response) => {
         setLoading(false);
-        setServicios(response);
+        setServicio(response.find((item)=> item.id === itemId));
       });
-    }, [items.id]);
+    }, [itemId]);
 
     if (loading) {
       return (
@@ -34,7 +34,7 @@ function ItemDetailContainer() {
         <>
         <h2 style={styles.titulos}>ITEM DETAIL</h2>
         <div>
-            <ItemDetail />
+            <ItemDetail servicio={servicio} />
         </div>
         </>
   );

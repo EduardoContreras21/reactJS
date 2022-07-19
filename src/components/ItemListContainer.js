@@ -12,7 +12,7 @@ const promesa = new Promise((res, rej) => {
   });
   
 function ItemListContainer() {
-    const {categoryName} = useParams
+    const {categoryName} = useParams();
     const [servicios, setServicios] = useState([]);
     const [loading, setLoading] = useState(false);
 
