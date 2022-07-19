@@ -10,7 +10,7 @@ const promesa = new Promise((res, rej) => {
   });
   
 function ItemDetailContainer() {
-    const parametros = useParams
+    const {itemId} = useParams
     const [servicios, setServicios] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -21,7 +21,7 @@ function ItemDetailContainer() {
         setLoading(false);
         setServicios(response);
       });
-    }, [parametros]);
+    }, [items.id]);
 
     if (loading) {
       return (

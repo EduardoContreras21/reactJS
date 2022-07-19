@@ -13,7 +13,7 @@ const items =[
         title:'Uñas',
         imagen: nails,
         descripcion:'Aplicación de uñas tipo escultural, usando acrílico como material de construcción. Incluye aplicación en gel semipermanente',
-        category: 'nails',
+        categoryName: 'nails',
     },
     {
         id:'1',

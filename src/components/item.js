@@ -14,7 +14,7 @@ function Item(serv) {
         <div className='card-body'>
             <h4 className='card-title'>{serv.title}</h4>
             <p className='card-text'>{serv.id}</p>
-            <button onClick={()=> navigate(`${serv.category}`)} className='btn btn-primary'>Adquirir</button>
+            <button onClick={()=> navigate(`/category/${items.categoryName}`)} className='btn btn-primary'>Adquirir</button>
         </div>
     </div>
   )

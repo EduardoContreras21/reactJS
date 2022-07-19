@@ -2,7 +2,7 @@ import React from 'react'
 import items from './ItemList'
 import ItemCount from './ItemCount'
 import {useNavigate} from 'react-router-dom'
-import ItemList from './ItemList'
+
 
 function ItemDetail() {
   const navigate = useNavigate ()
@@ -12,7 +12,7 @@ function ItemDetail() {
         <div className='card-body col-md-4'>
             <h4 className='card-title text-center'>{items.title}</h4>
             <p className='card-text text-left'>{items.descripcion}</p>
-            <button onClick={()=> navigate(`itemId`)} className='btn btn-primary'>Adquirir</button>
+            <button onClick={()=> navigate(`/category/${items.id}`)} className='btn btn-primary'>Adquirir</button>
         </div>
     </div>
   )
