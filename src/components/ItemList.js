@@ -9,42 +9,42 @@ import { Category } from '@mui/icons-material'
 
 export const items =[
     {
-        id:'0',
+        id:'uñas',
         title:'Uñas',
         imagen: nails,
         descripcion:'Aplicación de uñas tipo escultural, usando acrílico como material de construcción. Incluye aplicación en gel semipermanente',
         categoryName: 'nails',
     },
     {
-        id:'1',
+        id:'gelish',
         title:'Gelish',
         imagen: gel,
         descripcion:'El gelish es un esmalte semipermanente para las uñas que garantiza larga durabilidad, de hasta 21 días',
         categoryName: 'gelish',
     },
     {
-        id:'2',
+        id:'pedicure',
         title:'Pedicure',
         imagen: pedi,
         descripcion:'Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en pies',
         categoryName: 'pedicure',
     },
     {
-        id:'3',
+        id:'manicure',
         title:'Manicure',
         imagen: mani,
         descripcion:'Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en manos',
         categoryName: 'manicure',
     },
     {
-        id:'4',
+        id:'cejasHD',
         title:'Cejas HD',
         imagen: hd,
         descripcion:'La finalidad, es crear una apariencia realista de tus cejas mas plenas y rizadas',
         categoryName: 'cejasHD',
     },
     {
-        id:'5',
+        id:'lashlifting',
         title:'Lashlifting',
         imagen: lash,
         descripcion:'Tratamiento que alarga y crea una ligera curva hacia arriba de manera natural y duradera, consiguiendo mayor longitud y espesor',
