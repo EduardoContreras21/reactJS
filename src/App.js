@@ -5,6 +5,8 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart'
 import Item from './components/item';
+import CustomProvider from './Context/CartContext'
+
 import {
   BrowserRouter, 
   Route,
@@ -14,6 +16,7 @@ import {
 function App() {
   return (
     <BrowserRouter>
+    <CustomProvider>
     <Navbar />
     <Routes>
       <Route path='/' element={<ItemListContainer />} />
@@ -21,6 +24,7 @@ function App() {
       <Route path='/servicio/:itemId' element={<ItemDetailContainer />} />
       <Route path='/Cart' element={<Cart />}></Route>
     </Routes>
+    </CustomProvider>
     </BrowserRouter>
   );
 }
