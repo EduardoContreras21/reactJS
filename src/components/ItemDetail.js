@@ -1,18 +1,19 @@
 import React from 'react'
 import items from './ItemList'
 import ItemCount from './ItemCount'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {useState, useContext} from 'react'
 import { contexto } from '../Context/CartContext'
 
 function ItemDetail({servicio}) {
-  const navigate = useNavigate ()
-  const { addServicio } = useContext(contexto);
+  
   const {carrito, setCarrito} = useState (false);
+  const { addServicio } = useContext(contexto);
   const onAdd = (contador) =>{
-    setCarrito(true)
     addServicio({...items, cantidad:contador});
+    setCarrito(true);
   }
+
   return (
     <>
     <div className="card container d-flex justify-content-center align-items-center h-100" >
@@ -23,15 +24,11 @@ function ItemDetail({servicio}) {
             <p>
               {servicio.precio}
             </p>
-            {carrito ?
-<div>
-<Link to='./Cart.js'>Agendar Cita</Link>;
-<Link to='./'>Seguir Comprando</Link>;
-</div>
-:
-  <ItemCount initial={0} stock={3} onAdd={onAdd} />
-}<br></br><br></br>
-            <button onClick={()=> navigate(`/servicio/${servicio.id}`)} className='btn btn-primary'>Adquirir</button>
+  <ItemCount initial={0} stock={3} onAdd={onAdd} /><br></br><br></br>
+<Link to='./Cart.js'><button className='btn btn-primary'>Agendar Cita</button></Link>
+<Link to='/'><button className='btn btn-primary'>Seguir Comprando</button></Link>
+
+            <Link to={(`/servicio/${servicio.id}`)}><button className='btn btn-primary'>Adquirir</button></Link>
         </div>
     </div>
 

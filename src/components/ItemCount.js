@@ -1,6 +1,7 @@
 import { useState} from "react"
 
-const ItemCount = ({initial=0, stock, onAdd, contador,setContador}) => {
+const ItemCount = ({initial=0, stock, onAdd}) => {
+const [contador,setContador]=useState(initial);
     /*SUMAR*/ 
     const agregar = () =>{
         contador<stock && setContador(contador+1);
