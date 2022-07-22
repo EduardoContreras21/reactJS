@@ -20,7 +20,7 @@ return(
         <div style={styles.links}>
         <nav>
             {categories.map((category) => <NavLink key={category.id} style={styles.link} to={category.route}>{category.name}</NavLink>)}
-            <Link to ="Cart"><Cartwidget /></Link>
+            <Link to ="./Cart.js"><Cartwidget /></Link>
             
         </nav>
         </div>

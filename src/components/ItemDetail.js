@@ -7,15 +7,14 @@ import { contexto } from '../Context/CartContext'
 
 function ItemDetail({servicio}) {
   
-  const {carrito, setCarrito} = useState (false);
+  const [carrito, setCarrito] = useState (false);
   const { addServicio } = useContext(contexto);
   const onAdd = (contador) =>{
-    addServicio({...items, cantidad:contador});
     setCarrito(true);
+    addServicio({...items, cantidad:contador});
   }
 
   return (
-    <>
     <div className="card container d-flex justify-content-center align-items-center h-100" >
         <img src={servicio.imagen} alt=''style={{maxHeight: 500 }}></img>
         <div className='card-body col-md-4'>
@@ -24,15 +23,14 @@ function ItemDetail({servicio}) {
             <p>
               {servicio.precio}
             </p>
-  <ItemCount initial={0} stock={3} onAdd={onAdd} /><br></br><br></br>
-<Link to='./Cart.js'><button className='btn btn-primary'>Agendar Cita</button></Link>
-<Link to='/'><button className='btn btn-primary'>Seguir Comprando</button></Link>
-
-            <Link to={(`/servicio/${servicio.id}`)}><button className='btn btn-primary'>Adquirir</button></Link>
+            {carrito 
+            ? (<div><Link to='./Cart.js'><button className='btn btn-primary'>Agendar Cita</button></Link>
+            <Link to='/'><button className='btn btn-primary'>Seguir Comprando</button></Link></div>)
+            :             
+            (<ItemCount initial={0} stock={3} onAdd={onAdd} />)
+            }          
         </div>
     </div>
-
-</>
 )
 }
 
