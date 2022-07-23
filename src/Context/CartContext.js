@@ -1,41 +1,40 @@
 import React, {createContext, useState, useEffect } from 'react'
-import { items } from '../components/ItemList';
-
 
 export const contexto = createContext() 
 const { Provider } = contexto;  
 
 const CustomProvider = ({children}) =>{
 
-const [qtyCompra, setQtyCompra] = useState(0)
 const [carrito, setCarrito] = useState([])
+const [qtyCompra, setQtyCompra] = useState(0)
 
-const QtyServ = (items) => {
+const getQtyServ = () => {
   let cantidad = 0;
-  carrito.forEach(items =>{
-      cantidad += items.cantidad
+  carrito.forEach(item =>{ cantidad += item.cantidad
   })
   setQtyCompra(cantidad);
 }
 useEffect(() => {
-  QtyServ();
+  getQtyServ();
 },[carrito])
 
-const addServicio = () =>{
-  if(isInCart(items.id)){
-    const found = carrito.find(p => p.id === items.id);
+const addServicio = (item) =>{
+  if(isInCart(item.id)){
+    const found = carrito.find(p => p.id === item.id);
     const index = carrito.indexOf(found);
-    const auxcarrito = [...carrito];
-    auxcarrito[index].cantidad += items.cantidad;
-    setCarrito(auxcarrito);
+    const auxCarrito = [...carrito];
+    auxCarrito[index].cantidad += item.cantidad;
+    setCarrito(auxCarrito);
 }
   else{
-    setCarrito([...carrito, items])
+    setCarrito([...carrito, item])
 };
+
 }
 
 const removeServicio = (id) =>{
-  setCarrito(carrito.filter(items => items.id !==id))
+  setCarrito(carrito.filter(item => item.id !==id))
+  
 }
 const clearServicio = () =>{
   setCarrito([]);
@@ -48,7 +47,7 @@ const isInCart = (id) =>{
 }
 
     return (
-    <Provider value={[carrito, qtyCompra,addServicio, removeServicio, clearServicio ]}>
+    <Provider value={[carrito, qtyCompra, addServicio, removeServicio, clearServicio ]}>
     {children}
     </Provider>
   )

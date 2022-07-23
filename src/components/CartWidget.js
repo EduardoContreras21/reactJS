@@ -9,8 +9,8 @@ const Cartwidget = () => {
     return(
         <>
         <ShoppingCartIcon color="action" fontSize="large"/>
-        <span>{qtyCompra}</span>
-        </>
+        <div><p>{qtyCompra}</p></div>
+        </> 
     )}
 
 export default Cartwidget
