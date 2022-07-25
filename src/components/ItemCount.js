@@ -26,8 +26,10 @@ const [contador,setContador]=useState(initial);
             <h2>{contador}</h2>
             <button onClick={restar}>-</button>
         </div>
-        <button onClick={reset}>Reset</button>
-        <button onClick={agregar}>Agregar al carrito</button>
+        <div className="d-flex justify-content-center align-items-center">
+        <button onClick={reset} className='btn btn-primary'>Reset</button>
+        <button onClick={agregar} className='btn btn-primary'>Agregar al carrito</button>
+        </div>
         </>
     )
 }

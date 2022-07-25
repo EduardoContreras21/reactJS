@@ -1,53 +1,44 @@
-import {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom';
-import {items} from './ItemList'
 import { db } from '../Firebase/Firebase';
 import { doc, getDoc, collection } from 'firebase/firestore';
 
-  
-export const ItemDetailContainer= () => {
+const styles ={
+  titulos:{
+      textAlign: 'center',
+  }
+}
+
+const ItemDetailContainer = () => {
     const {itemId} = useParams ();
     const [servicio, setServicio] = useState([]);
-    const [loading, setLoading] = useState(false);
-
+    const [loading, setLoading] = useState (true);
     
     useEffect(() => {
       const productsCollection = collection (db, 'servicios');
       const refDoc = doc(productsCollection, itemId)
       getDoc(refDoc).then(
         result => {
-          setServicio({
+          const servicios ={
             id: result.id,
             ...result.data(),
-          })
+          }
+          setServicio(servicios);
         }
       )
-      .catch(err => console.log(err))
+      .catch(error => console.log(error))
       .finally(() => setLoading(false))
     },[itemId]);
-
-    if (loading) {
-      return (
-        <>
-          <h1>Cargando...</h1>
-        </>
-      );
-    };
+    
     return(
         <>
-        <h2 style={styles.titulos}>ITEM DETAIL</h2>
-        <div>
-            <ItemDetail servicio={servicio} />
-        </div>
-        </>
+        {loading
+        ? <h2 style={styles.titulos}>ITEM DETAIL</h2>
+        :<div><ItemDetail servicio={servicio} /></div>
+}</>
   );
 
-
-const styles ={
-    titulos:{
-        textAlign: 'center',
-    }
-}
+  
 }
 export default ItemDetailContainer
