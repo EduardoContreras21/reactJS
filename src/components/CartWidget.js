@@ -8,7 +8,7 @@ const Cartwidget = () => {
 
     return(
         <>
-        <ShoppingCartIcon color="action" fontSize="large"/>
+        <ShoppingCartIcon color="action" fontSize="large" />
         <p>{qtyCompra}</p>
         </> 
     )}

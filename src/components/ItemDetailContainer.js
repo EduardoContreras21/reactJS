@@ -2,26 +2,30 @@ import {useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom';
 import {items} from './ItemList'
+import { db } from '../Firebase/Firebase';
+import { doc, getDoc, collection } from 'firebase/firestore';
 
-const promesa = new Promise((res, rej) => {
-    setTimeout(() => {
-      res(items);
-    }, 2000);
-  });
   
-function ItemDetailContainer() {
+export const ItemDetailContainer= () => {
     const {itemId} = useParams ();
     const [servicio, setServicio] = useState([]);
     const [loading, setLoading] = useState(false);
 
     
     useEffect(() => {
-      setLoading(true);
-      promesa.then((response) => {
-        setLoading(false);
-        setServicio(response.find((item)=> item.id === itemId));
-      });
-    }, [itemId]);
+      const productsCollection = collection (db, 'servicios');
+      const refDoc = doc(productsCollection, itemId)
+      getDoc(refDoc).then(
+        result => {
+          setServicio({
+            id: result.id,
+            ...result.data(),
+          })
+        }
+      )
+      .catch(err => console.log(err))
+      .finally(() => setLoading(false))
+    },[itemId]);
 
     if (loading) {
       return (
@@ -38,12 +42,12 @@ function ItemDetailContainer() {
         </div>
         </>
   );
-    }    
+
 
 const styles ={
     titulos:{
         textAlign: 'center',
     }
 }
-
+}
 export default ItemDetailContainer
