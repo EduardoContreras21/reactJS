@@ -31,8 +31,7 @@ export const items =[
         imagen: pedi,
         descripcion:'Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en pies',
         categoryName: 'pedicure',
-        precio:'$300',
-        disponibilidad: '3',
+        precio:'$390',
     },
     {
         id:'manicure',
@@ -40,7 +39,7 @@ export const items =[
         imagen: mani,
         descripcion:'Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en manos',
         categoryName: 'manicure',
-        precio:'$390',
+        precio:'$300',
     },
     {
         id:'cejasHD',
