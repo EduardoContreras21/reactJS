@@ -5,12 +5,11 @@ import pedi from '../imagenes/pedicure.tag.jpg'
 import mani from '../imagenes/manicure.tag.jpg'
 import hd from '../imagenes/cejashd.tag.jpg'
 import lash from '../imagenes/lashlifting.tag.jpg'
-import { Category } from '@mui/icons-material'
-import { style } from '@mui/system'
+
 
 export const items =[
     {
-        id:'uñas',
+        id:'Uñas',
         title:'Uñas',
         imagen: nails,
         descripcion:'Aplicación de uñas tipo escultural, usando acrílico como material de construcción. Incluye aplicación en gel semipermanente',
@@ -18,7 +17,7 @@ export const items =[
         precio:'$350',
         },
     {
-        id:'gelish',
+        id:'Gelish',
         title:'Gelish',
         imagen: gel,
         descripcion:'El gelish es un esmalte semipermanente para las uñas que garantiza larga durabilidad, de hasta 21 días',
@@ -26,7 +25,7 @@ export const items =[
         precio:'$150',
     },
     {
-        id:'pedicure',
+        id:'Pedicure',
         title:'Pedicure',
         imagen: pedi,
         descripcion:'Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en pies',
@@ -34,7 +33,7 @@ export const items =[
         precio:'$390',
     },
     {
-        id:'manicure',
+        id:'Manicure',
         title:'Manicure',
         imagen: mani,
         descripcion:'Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en manos',
@@ -42,7 +41,7 @@ export const items =[
         precio:'$300',
     },
     {
-        id:'cejasHD',
+        id:'CejasHD',
         title:'Cejas HD',
         imagen: hd,
         descripcion:'La finalidad, es crear una apariencia realista de tus cejas mas plenas y rizadas',
@@ -50,7 +49,7 @@ export const items =[
         precio:'$300',
     },
     {
-        id:'lashlifting',
+        id:'Lashlifting',
         title:'Lashlifting',
         imagen: lash,
         descripcion:'Tratamiento que alarga y crea una ligera curva hacia arriba de manera natural y duradera, consiguiendo mayor longitud y espesor',

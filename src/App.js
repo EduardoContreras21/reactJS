@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar'
 import ItemListContainer from './components/ItemListContainer'
@@ -22,7 +21,7 @@ function App() {
       <Route path='/' element={<ItemListContainer />} />
       <Route path='/category/:categoryName' element={<Item />} />
       <Route path='/servicio/:itemId' element={<ItemDetailContainer />} />
-      <Route path='/Cart' element={<Cart />}></Route>
+      <Route path='/Cart' element={<Cart />} />
     </Routes>
     </CustomProvider>
     </BrowserRouter>

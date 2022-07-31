@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom';
 import { db } from '../Firebase/Firebase';
-import { doc, getDoc, collection } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 
 const styles ={
   titulos:{
@@ -17,14 +17,11 @@ const ItemDetailContainer = () => {
     
     useEffect(() => {
       const productsCollection = collection (db, 'servicios');
-      const refDoc = doc(productsCollection, itemId)
-      getDoc(refDoc).then(
+      getDocs(productsCollection).then(
         result => {
-          const servicios ={
-            id: result.id,
-            ...result.data(),
-          }
-          setServicio(servicios);
+          const servicios = result.docs.map( doc => ({...doc.data()}));
+          const servicio = servicios.find((s)=> s.Id === itemId);
+          setServicio(servicio);
         }
       )
       .catch(error => console.log(error))

@@ -16,7 +16,7 @@ function ItemListContainer() {
     
     useEffect(() =>{
         const q = categoryName
-        ? query(collection(db, 'servicios'), where('categoryName','==', 'categoryName'))
+        ? query(collection(db, 'servicios'), where('categoryName','==', categoryName))
         : collection(db, 'servicios');
         getDocs(q)
         .then(result =>{
@@ -26,7 +26,8 @@ function ItemListContainer() {
                 ...doc.data()}
             })
             setServicios(lista);
-        })}, [categoryName])
+        })
+    }, [categoryName])
 
 return(
         <>

@@ -1,14 +1,13 @@
 import React from 'react'
-import { Category } from '@mui/icons-material'
 import { useNavigate, useParams } from 'react-router-dom'
-import {items} from './ItemList'
+import { items } from './ItemList'
 
 
 function Item(serv) {
 
   const navigate = useNavigate()
   const {categoryName} = useParams ();
-const item = serv.id ? serv : items.find(item => item.categoryName === categoryName);
+  const item = serv.id ? serv : items.find(item => item.categoryName === categoryName);
 
   return (
     <div className="card text-center" style={{maxWidth: 500, margin:"0 auto"}} >
