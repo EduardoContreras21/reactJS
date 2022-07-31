@@ -5,7 +5,7 @@ import { useState, useContext } from 'react'
 import { contexto } from '../Context/CartContext'
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
-function ItemDetail({servicios}) {
+function ItemDetail({servicio}) {
   
   const [carrito, setCarrito] = useState (false);
   const [image, setImage] = useState();
@@ -13,25 +13,25 @@ function ItemDetail({servicios}) {
   
   useEffect(()=>{
     const storage = getStorage();
-    getDownloadURL(ref(storage, servicios.imagen))
+    getDownloadURL(ref(storage, servicio.imagen))
     .then((url)=>{
       setImage(url);
     });
-  },[servicios]);
+  },[servicio]);
 
   const onAdd = (contador) =>{
     setCarrito(true);
-    addServicio({...servicios, cantidad:contador});
+    addServicio({...servicio, cantidad:contador});
   }
 
   return (
     <div className="card container d-flex justify-content-center align-items-center h-100" >
         {image && <img src={image} alt=''style={{maxHeight: 500 }}></img>}
         <div className='card-body col-md-4'>
-            <h4 className='card-title text-center'>{servicios.title}</h4>
-            <p className='card-text text-left'>{servicios.descripcion}</p>
+            <h4 className='card-title text-center'>{servicio.title}</h4>
+            <p className='card-text text-left'>{servicio.descripcion}</p>
             <p>
-              {servicios.precio}
+              {servicio.precio}
             </p>
             {carrito 
             ? (<div><Link to='/Cart'><button className='btn btn-primary'>Agendar Cita</button></Link>
