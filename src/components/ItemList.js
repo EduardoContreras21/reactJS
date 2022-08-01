@@ -9,7 +9,7 @@ import lash from '../imagenes/lashlifting.tag.jpg'
 
 export const items =[
     {
-        id:'Uñas',
+        id:'uñas',
         title:'Uñas',
         imagen: nails,
         descripcion:'Aplicación de uñas tipo escultural, usando acrílico como material de construcción. Incluye aplicación en gel semipermanente',
@@ -17,7 +17,7 @@ export const items =[
         precio:'$350',
         },
     {
-        id:'Gelish',
+        id:'gelish',
         title:'Gelish',
         imagen: gel,
         descripcion:'El gelish es un esmalte semipermanente para las uñas que garantiza larga durabilidad, de hasta 21 días',
@@ -25,7 +25,7 @@ export const items =[
         precio:'$150',
     },
     {
-        id:'Pedicure',
+        id:'pedicure',
         title:'Pedicure',
         imagen: pedi,
         descripcion:'Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en pies',
@@ -33,7 +33,7 @@ export const items =[
         precio:'$390',
     },
     {
-        id:'Manicure',
+        id:'manicure',
         title:'Manicure',
         imagen: mani,
         descripcion:'Tratamiento estético que incluye remocion de cuticula, limado, decorado y complementado por un masaje en manos',
@@ -41,7 +41,7 @@ export const items =[
         precio:'$300',
     },
     {
-        id:'CejasHD',
+        id:'cejasHD',
         title:'Cejas HD',
         imagen: hd,
         descripcion:'La finalidad, es crear una apariencia realista de tus cejas mas plenas y rizadas',
@@ -49,7 +49,7 @@ export const items =[
         precio:'$300',
     },
     {
-        id:'Lashlifting',
+        id:'lashlifting',
         title:'Lashlifting',
         imagen: lash,
         descripcion:'Tratamiento que alarga y crea una ligera curva hacia arriba de manera natural y duradera, consiguiendo mayor longitud y espesor',

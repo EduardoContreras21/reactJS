@@ -8,11 +8,11 @@ function Cart() {
 
   return (
     <>
-    <div>Cart</div>
+    <h2>Resumen de compra</h2>
     {carrito.map((c)=>(
       <div>
-        <span>Titulo: {c.title}</span>
-        <span>Cantidad: {c.cantidad}</span>
+        <span>Servicio: {c.title}</span><br></br>
+        <span>Cantidad: {c.cantidad}</span><br></br>
       </div>
     ))}
     <Formulario />
