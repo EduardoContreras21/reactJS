@@ -1,7 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react'
 
 
-export const contexto = createContext() 
+export const contexto = createContext({
+  servCarrito:[]  
+}); 
 const { Provider } = contexto;  
 
 const CustomProvider = ({children}) =>{
@@ -10,8 +12,8 @@ const [qtyCompra, setQtyCompra] = useState(0)
 
 const getQtyCompra = () => {
   let cantidad = 0;
-  carrito.forEach(items => cantidad += items.cantidad
-  );
+  carrito.forEach(items => {cantidad += items.cantidad
+});
   setQtyCompra(cantidad);
 }
 useEffect(() => {
@@ -46,8 +48,13 @@ const isInCart = (id) =>{
   )
 }
 
+const total= () =>{
+  let totalCarrito =0;
+  carrito.forEach((e)=>totalCarrito = totalCarrito + parseFloat(e.cantidad*e.precio))
+  return totalCarrito.toFixed(2);
+}
     return (
-    <Provider value={{ carrito, qtyCompra, addServicio, removeServicio, clearServicio }}>
+    <Provider value={{ servCarrito:carrito, qtyCompra, addServicio, removeServicio, clearServicio, total }}>
       {children}
     </Provider>
   )

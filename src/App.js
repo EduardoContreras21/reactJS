@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart'
 import Item from './components/item';
 import CustomProvider from './Context/CartContext'
+import Formulario from './components/Formulario'
 
 import {
   BrowserRouter, 
@@ -22,6 +23,7 @@ function App() {
       <Route path='/category/:categoryName' element={<Item />} />
       <Route path='/servicio/:itemId' element={<ItemDetailContainer />} />
       <Route path='/Cart' element={<Cart />} />
+      <Route path='/Formulario' element={<Formulario />} />
     </Routes>
     </CustomProvider>
     </BrowserRouter>
