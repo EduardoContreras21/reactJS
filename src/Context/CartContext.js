@@ -7,13 +7,13 @@ export const contexto = createContext({
 const { Provider } = contexto;  
 
 const CustomProvider = ({children}) =>{
-const [carrito, setCarrito] = useState([])
-const [qtyCompra, setQtyCompra] = useState(0)
+const [carrito, setCarrito] = useState([]);
+const [qtyCompra, setQtyCompra] = useState(0);
 
 const getQtyCompra = () => {
   let cantidad = 0;
   carrito.forEach(items => {cantidad += items.cantidad
-});
+})
   setQtyCompra(cantidad);
 }
 useEffect(() => {
@@ -34,8 +34,8 @@ const addServicio = (items) =>{
 }
 
 const removeServicio = (id) =>{
-  setCarrito(carrito.filter(items => items.Id !==id))
-}
+  setCarrito(carrito.filter(items => items.id !==id));
+};
 
 const clearServicio = () =>{
   setCarrito([]);
