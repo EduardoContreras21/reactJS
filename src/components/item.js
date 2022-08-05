@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { items } from './ItemList'
+import { items } from '../Containers/List/ItemList'
 
 
 function Item(serv) {

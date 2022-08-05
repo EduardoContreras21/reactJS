@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
-import { db } from '../Firebase/Firebase'
+import { db } from '../../Firebase/Firebase'
 import { getDocs, collection, query, where } from "firebase/firestore"
 
 const styles ={

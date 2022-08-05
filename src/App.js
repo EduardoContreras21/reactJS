@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar'
-import ItemListContainer from './components/ItemListContainer'
-import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './Containers/List/ItemListContainer'
+import ItemDetailContainer from './Containers/Detail/ItemDetailContainer';
 import Cart from './components/Cart'
 import Item from './components/item';
 import CustomProvider from './Context/CartContext'

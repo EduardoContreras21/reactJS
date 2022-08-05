@@ -1,10 +1,10 @@
-import Item from './item'
-import nails from '../imagenes/acrilicas.tag.jpg'
-import gel from '../imagenes/gelish.tag.jpg'
-import pedi from '../imagenes/pedicure.tag.jpg'
-import mani from '../imagenes/manicure.tag.jpg'
-import hd from '../imagenes/cejashd.tag.jpg'
-import lash from '../imagenes/lashlifting.tag.jpg'
+import Item from '../../components/item'
+import nails from '../../imagenes/acrilicas.tag.jpg'
+import gel from '../../imagenes/gelish.tag.jpg'
+import pedi from '../../imagenes/pedicure.tag.jpg'
+import mani from '../../imagenes/manicure.tag.jpg'
+import hd from '../../imagenes/cejashd.tag.jpg'
+import lash from '../../imagenes/lashlifting.tag.jpg'
 
 
 export const items =[

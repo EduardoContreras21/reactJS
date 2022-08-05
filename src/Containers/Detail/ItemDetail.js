@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import ItemCount from './ItemCount'
+import ItemCount from '../../components/ItemCount'
 import { Link } from 'react-router-dom'
 import { useState, useContext } from 'react'
-import { contexto } from '../Context/CartContext'
+import { contexto } from '../../Context/CartContext'
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 function ItemDetail({servicio}) {
