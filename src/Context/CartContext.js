@@ -18,11 +18,11 @@ const getQtyCompra = () => {
 }
 useEffect(() => {
   getQtyCompra();
-},[carrito])
+},[carrito]);
 
 const addServicio = (items) =>{
-  if(isInCart(items.id)){
-    const found = carrito.find(p => p.Id === items.id);
+  if(isInCart(items.Id)){
+    const found = carrito.find(p => p.Id <= items.cantidad);
     const index = carrito.indexOf(found);
     const auxCarrito = [...carrito];
     auxCarrito[index].cantidad += items.cantidad;
@@ -34,7 +34,7 @@ const addServicio = (items) =>{
 }
 
 const removeServicio = (id) =>{
-  setCarrito(carrito.filter(items => items.id !==id));
+  setCarrito(carrito.filter(items => items.Id !== id));
 };
 
 const clearServicio = () =>{

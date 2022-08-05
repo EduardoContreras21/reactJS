@@ -2,12 +2,9 @@ import React, { useContext } from 'react'
 import { contexto } from '../Context/CartContext';
 import { Link } from 'react-router-dom'
 
-
-
 const Cart =() => {
   const { servCarrito, removeServicio, clearServicio, total } = useContext(contexto);
   
-
 return (
     <>
     <h3 style={styles.titulo}>RESUMEN DE COMPRA</h3>
@@ -20,9 +17,10 @@ return (
     <>
     {servCarrito.map(c => 
       <div>
-        <h4 key={c.id}> {c.title} <button onClick={() => removeServicio(c.id)} className= 'btn btn-primary'>Quitar servicio</button></h4>
+        <h4 key={c.id}> {c.title} </h4>
         <span>Cantidad {c.cantidad}</span><br></br>
         <span>${c.cantidad * c.precio}</span><br></br>
+        <button className= 'btn btn-primary' onClick={()=>{removeServicio(c.Id)}}>Quitar servicio</button>
       </div>
     )}
         <div> Total de la compra: ${total()} </div>
