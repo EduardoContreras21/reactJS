@@ -22,12 +22,12 @@ useEffect(() => {
 
 const addServicio = (items) =>{
   if(isInCart(items.Id)){
-    const found = carrito.find(p => p.Id <= items.Id);
+    const found = carrito.find(p => p.Id === items.Id);
     const index = carrito.indexOf(found);
     const auxCarrito = [...carrito];
     auxCarrito[index].cantidad += items.cantidad;
     setCarrito(auxCarrito);
-}
+    }
   else{
     setCarrito([...carrito, items])
 };

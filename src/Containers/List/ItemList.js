@@ -58,13 +58,15 @@ export const items =[
     },
 ]
 
+
 const ItemList = () => {
     return(
     <div className='container d-flex justify-content-center align-items-center h-100'>
         <div className='row'>
             {
                 items.map(item =>(
-            <div className='col-md-4' key={item.id}>
+                    
+            <div className='col-md-4' key={item.id} >
                 <Item {...item}/>
             </div>
 ))}
