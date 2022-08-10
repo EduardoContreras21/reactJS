@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 const Formulario = () =>{
   const { servCarrito, total } = useContext(contexto);
   const [idVenta, setIdVenta] = useState()
-  const [loading, setLoading] = useState(false)
   const [comprador, setComprador] = useState( {
     Nombre: '',
     Apellido: '',
@@ -38,9 +37,7 @@ const finalizarCompra = () =>{
 }
   return (
     <>
-    {loading 
-      ? <h4>Cargando</h4>
-      : (!idVenta && <div>
+    {(!idVenta && <div>
         <h3 style={styles.titulo}>DATOS DEL COMPRADOR</h3>
         <Form onSubmit={finalizarCompra}> 
         <Form.Group className="mb-3" controlId="formBasicName">

@@ -17,7 +17,8 @@ const getQtyCompra = () => {
   setQtyCompra(cantidad);
 }
 useEffect(() => {
-  getQtyCompra();
+  getQtyCompra()
+// eslint-disable-next-line react-hooks/exhaustive-deps
 },[carrito]);
 
 const addServicio = (items) =>{
